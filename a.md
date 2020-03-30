@@ -88,6 +88,60 @@ class Board extends React.Component {
 }
 ```
 
+Change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+
+```
+class Square exteds React.Component {
+	render() {
+		return (
+			<button className="square">
+				{this.props.value}
+			</button>
+		)
+	}
+}
+
+```
+
+Before:
+
+![before](./imgs/a.before.png)
+
+After. You should see a number in each square in the rendered output.
+
+![after](./imgs/a.after.png)
+
+
+Congratulations! You've just "passed a prop" from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+
+
+----
+
+### Making an Interactive Component
+
+Let's fill the Square component with an "X" when we click it. First, change the button tag that is returned from the Square component's `render()` function to this:
+
+```
+
+class Square extends React.Component {
+	render() {
+		return (
+			<button className="square" onClick={function() { alert('click'); }}>
+				{this.props.value}
+			</button>
+		);
+	}
+}
+
+```
+
+If you click on a Square now, you should see an alter in your browser.
+
+
+
+
+
+
 
 
 
